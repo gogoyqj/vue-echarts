@@ -1909,6 +1909,10 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
 
+d3-collection@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/d3-collection/-/d3-collection-1.0.4.tgz#342dfd12837c90974f33f1cc0a785aea570dcdc2"
+
 d@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f"
@@ -2155,6 +2159,12 @@ ecc-jsbn@~0.1.1:
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
   dependencies:
     jsbn "~0.1.0"
+
+echarts@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/echarts/-/echarts-4.0.4.tgz#36aa8a47d33543d3dfe6a7bc1228ddc3a1e41157"
+  dependencies:
+    zrender "4.0.3"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -6608,3 +6618,7 @@ yorkie@^1.0.3:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zrender@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/zrender/-/zrender-4.0.3.tgz#801ef001101750a61857f84e64c4d5fb3c88cca7"

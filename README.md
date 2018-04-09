@@ -1,0 +1,1 @@
+echarts wrapper for vue2.x

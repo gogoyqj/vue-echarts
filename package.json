@@ -2,6 +2,7 @@
   "name": "vue-echart",
   "version": "0.1.0",
   "private": true,
+  "main": "./src/charts/index.vue.js",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",

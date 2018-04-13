@@ -35,7 +35,13 @@ raw
                     cell.map((metric, index) => {
                       if (metric && metric.value !== undefined) {
                         const { value, style: metricStyle = {}, title } = metric;
-                        return <label key={index} style={metricStyle}>{`${title ? `${title}：` : ''} ${value}`}</label>;
+                        return (
+                          <span>
+                            {index === 1 ? '(' : null}
+                            <label key={index} style={metricStyle}>{`${title ? `${title}：` : ''}${value}`}</label>
+                            {index && index === cell.length - 1 ? ')' : null}
+                          </span>
+                        );
                       }
                       return <label>{metric}</label>;
                     })

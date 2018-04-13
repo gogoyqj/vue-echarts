@@ -46,10 +46,10 @@ raw.models.set(TABLE, () => {
     // 调整显示效果，如果有同环比，则和数据显示在一起
     // 正常数据配置必须在前列
     value.forEach((o) => {
-      const { style: s, format = '', type, key, label = key, name, alias, $format, id } = o;
-      const ratio = o[SPLY] || o[LP];
+      const { style: s, format = '', type, key, label = key, name, alias, $format, id, expTag } = o;
+      const ratio = o[SPLY] || o[LP] || expTag;
       const isMetric = type === METRIC;
-      const title = alias || name || label;
+      const title = !ratio && alias || name || label;
       const newColumn = {
         ...o,
         data: key,
@@ -112,7 +112,7 @@ raw.models.set(TABLE, () => {
         // 顺序不一定一致
         columns.forEach(({ data: pos, id, render }) => {
           const value = render(row[pos], row);
-          if (renderMap[id]) {
+          if (renderMap[id] && value !== null) {
             row[pos] = [value].concat(renderMap[id].map((col) => {
               const baseValue = Number(typeof value === 'object' ? value.originValue : value);
               if (row[col.data] != null) {

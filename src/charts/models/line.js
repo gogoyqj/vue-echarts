@@ -32,14 +32,6 @@ raw.models.set(LINE, (config = {}) => {
     .types(METRIC)
     // .style(style(LINE))
     .format(TWO_DECIMAL, PERCENTILE)
-    .items([
-      {
-        key: 'yAxisIndex',
-        itemConfig: {
-          extra: '配置此参数，使用不同的Y轴坐标系'
-        } 
-      }
-    ])
     .required(1)
     .multiple(true);
 

@@ -110,8 +110,8 @@ const DRAW = (canvas, { xAxis, yAxis, series, hideXY = false, percent }, config 
       },
       legend: {
         type: 'scroll',
-        left: 80,
-        right: 50,
+        left: 'auto',
+        right: 'auto',
         data: series.map(({ name: category }) => category)
       },
       grid: yAxis.map((o, index) => {

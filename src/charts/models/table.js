@@ -2,7 +2,8 @@
  * @description 表格模型
  */
 import { raw } from '../raw';
-import { METRIC, DIMENSION, PERCENTILE, TWO_DECIMAL, THOUSANDS, charts, style, formatStyle, formatNumber, SPLY, LP, renderRatio } from '../constants';
+import { METRIC, DIMENSION, PERCENTILE, TWO_DECIMAL, THOUSANDS, charts,
+  style, formatStyle, formatNumber, SPLY, LP, renderRatio, hasRatio } from '../constants';
 
 const { TABLE } = charts;
 
@@ -46,8 +47,8 @@ raw.models.set(TABLE, () => {
     // 调整显示效果，如果有同环比，则和数据显示在一起
     // 正常数据配置必须在前列
     value.forEach((o) => {
-      const { style: s, format = '', type, key, label = key, name, alias, $format, id, expTag } = o;
-      const ratio = o[SPLY] || o[LP] || expTag;
+      const { style: s, format = '', type, key, label = key, name, alias, $format, id } = o;
+      const ratio = hasRatio(o);
       const isMetric = type === METRIC;
       const title = !ratio && alias || name || label;
       const newColumn = {

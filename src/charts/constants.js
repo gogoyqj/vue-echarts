@@ -92,9 +92,6 @@ export function renderRatio(v, valueToCompare, isRatio) {
     console.warn(`${valueToCompare} 不是数字`);
   } else {
     // 是否已经计算百分比
-    if (isRatio) {
-      console.log(v);
-    }
     const ratio = (valueToCompare - v) * 100 / (isRatio ? 1 : (v || 1));
     // 空值
     v = Number.isNaN(ratio) ? '' : `${ratio.toFixed(2)}%`;
@@ -102,4 +99,8 @@ export function renderRatio(v, valueToCompare, isRatio) {
     return { style, value: v };
   }
   return { value: v };
+}
+
+export function hasRatio(dim) {
+  return dim[SPLY] || dim[LP] || dim.expTag;
 }

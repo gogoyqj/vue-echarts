@@ -2,7 +2,8 @@
  * @description 指标块模型
  */
 import { raw } from '../raw';
-import { PERCENTILE, TWO_DECIMAL, THOUSANDS, METRIC, charts, style, formatStyle, formatNumber, SPLY, LP, renderRatio } from '../constants';
+import { PERCENTILE, TWO_DECIMAL, THOUSANDS, METRIC, charts,
+  style, formatStyle, formatNumber, SPLY, LP, renderRatio, hasRatio } from '../constants';
 
 const { METRIC_BLOCK } = charts;
 
@@ -67,7 +68,7 @@ raw.models.set(METRIC_BLOCK, () => {
             currentValue = currentValue.originValue;
             // 处理空值
             if (currentValue != null) {
-              if (SPLY in dim || LP in dim) {
+              if (hasRatio(dim)) {
                 metric = {
                   ...metric,
                   ...renderRatio(v, currentValue)

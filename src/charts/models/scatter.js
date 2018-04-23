@@ -79,14 +79,14 @@ raw.models.set(SCATTER, (config = {}) => {
 
   // 定义 x 轴，指标：比如 日期
   const XAxis = model.dimension('XAxis')
-    .label('XAxis METRIC')
+    .label(METRIC)
     .types(METRIC)
     .format(TWO_DECIMAL, PERCENTILE)
     .required([1, 1]);
 
   // 定义 y 轴，指标：比如 PV
   const YAxis = model.dimension('YAxis')
-    .label('YAxis METRIC')
+    .label(METRIC)
     .types(METRIC)
     .format(TWO_DECIMAL, PERCENTILE)
     .required([1, 1]);
